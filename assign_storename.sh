@@ -21,4 +21,7 @@ rm -rf /etc/nginx/sites-enabled/default
 ln -s /var/www/$STORE_NAME/config/nginx.conf /etc/nginx/sites-enabled/$STORE_NAME
 ln -s /var/www/$STORE_NAME/config/unicorn_init.sh /etc/init.d/unicorn_$STORE_NAME
 
+echo "Updating permissions"
+chmod -R 775 /var/www/$STORE_NAME
+
 echo "Completed"
