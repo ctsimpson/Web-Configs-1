@@ -24,4 +24,8 @@ ln -s /var/www/$STORE_NAME/config/unicorn_init.sh /etc/init.d/unicorn_$STORE_NAM
 echo "Updating permissions"
 chmod -R 775 /var/www/$STORE_NAME
 
+echo "Generate Binstubs"
+cd /var/www/$STORE_NAME
+bundle install --binstubs
+
 echo "Completed"
