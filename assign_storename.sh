@@ -10,7 +10,12 @@ while true; do
     read -p "Domain names you want this store to respond to:" DOMAIN_NAMES
         break;
 done
-
+echo "************************************"
+echo " This script now creates your       "
+echo " your binstub files as well         "
+echo "************************************"
+echo ""
+echo ""
 echo "Updating config files"
 find . -name "nginx.conf" -exec sed -i "s/\[storename\]/$STORE_NAME/g" '{}' \;
 find . -name "nginx.conf" -exec sed -i "s/\[domain-names\]/$DOMAIN_NAMES/g" '{}' \;
