@@ -7,7 +7,12 @@ Nginx installed
 sed is installed
 
 ###Usage:
-cd [config folder location of your store] (i.e: cd ~/apps/mystore)
+1. From your config folder location
+2. Clone this repo
+3. git clone https://github.com/ctsimpson/Web-Configs-1.git
+
+4. Run the install script
+
      $ sh assign_storename.sh
           
      Your Store folder name (i.e.: mystore) :mystore
