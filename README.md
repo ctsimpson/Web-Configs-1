@@ -13,13 +13,15 @@ Included in these files is a script that modifies three other template files so 
 
 4. Run the install script
 
-** Linux **
+Linux 
 
      $ sh assign_storename.sh
      
-** Mac OS X**
+ Mac OS X
 
      $ sh assign_storename_mac.sh
+
+Follow the prompts
 
      Your Store folder name (i.e.: mystore) :mystore
      The path to your store (i.e. : /var/www/) : /Users/ctsimpson/apps/
