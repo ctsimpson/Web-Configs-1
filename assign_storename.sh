@@ -24,9 +24,9 @@ echo ""
 echo ""
 echo "Updating config files"
 NEW_PATH="$(echo "$STORE_PATH$STORE_NAME" | sed -e 's/[/&]/\\&/g')"
-find . -name "nginx.conf" -exec sed -i '' "s/\[storepath\]/$NEW_PATH/g" '{}' \;
-find . -name "nginx.conf" -exec sed -i '' "s/\[domain-names\]/$DOMAIN_NAMES/g" '{}' \;
-find . -name "unicorn*" -exec sed -i '' "s/\[storepath\]/$NEW_PATH/g" '{}' \;
+find . -name "nginx.conf" -exec sed -i "s/\[storepath\]/$NEW_PATH/g" '{}' \;
+find . -name "nginx.conf" -exec sed -i "s/\[domain-names\]/$DOMAIN_NAMES/g" '{}' \;
+find . -name "unicorn*" -exec sed -i "s/\[storepath\]/$NEW_PATH/g" '{}' \;
 
 echo "Creating Symbolic links"
 rm -rf /etc/nginx/sites-enabled/default
