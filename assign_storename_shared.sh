@@ -8,7 +8,7 @@ while true; do
 done
 
 while true; do
-     read -p "The path to your store (i.e.: /var/www) :" STORE_PATH
+     read -p "The path to your store (i.e.: /Users/ctsimpson/apps) :" STORE_PATH
           break;
 done
 

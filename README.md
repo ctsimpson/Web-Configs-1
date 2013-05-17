@@ -26,7 +26,7 @@ Follow the prompts
      Your Store folder name (i.e.: mystore) :mystore => standard linux
                                              current => capistrano deployments
 
-     The path to your store (i.e. : /var/www/) : /Users/ctsimpson/apps/
+     The path to your store (i.e. : /var/www) : /Users/ctsimpson/apps
      Domain names you want this store to respond to:www.mystore.com mystore.com
 
 `inspect assign_storename.sh to verify the updates that it should have made and to confirm the symbolic links `
