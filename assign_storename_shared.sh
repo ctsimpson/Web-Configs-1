@@ -35,3 +35,4 @@ ln -nfs $STORE_PATH/shared/config/unicorn_init.sh /etc/init.d/unicorn_$STORE_NAM
 
 echo "Updating permissions"
 chmod -R 775 $STORE_PATH/$STORE_NAME
+chmod +x $STORE_PATH/shared/config/unicorn_init.sh
