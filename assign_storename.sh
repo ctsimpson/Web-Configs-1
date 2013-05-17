@@ -8,7 +8,7 @@ while true; do
 done
 
 while true; do
-     read -p "The path to your store (i.e.: /var/www/) :" STORE_PATH
+     read -p "The path to your store (i.e.: /var/www) :" STORE_PATH
           break;
 done
 
@@ -23,21 +23,21 @@ echo "************************************"
 echo ""
 echo ""
 echo "Updating config files"
-NEW_PATH="$(echo "$STORE_PATH$STORE_NAME" | sed -e 's/[/&]/\\&/g')"
+NEW_PATH="$(echo "$STORE_PATH/$STORE_NAME" | sed -e 's/[/&]/\\&/g')"
 find . -name "nginx.conf" -exec sed -i "s/\[storepath\]/$NEW_PATH/g" '{}' \;
 find . -name "nginx.conf" -exec sed -i "s/\[domain-names\]/$DOMAIN_NAMES/g" '{}' \;
 find . -name "unicorn*" -exec sed -i "s/\[storepath\]/$NEW_PATH/g" '{}' \;
 
 echo "Creating Symbolic links"
 rm -rf /etc/nginx/sites-enabled/default
-ln -s $STORE_PATH$STORE_NAME/config/nginx.conf /etc/nginx/sites-enabled/$STORE_NAME
-ln -s $STORE_PATH$STORE_NAME/config/unicorn_init.sh /etc/init.d/unicorn_$STORE_NAME
+ln -s $STORE_PATH/$STORE_NAME/config/nginx.conf /etc/nginx/sites-enabled/$STORE_NAME
+ln -s $STORE_PATH/$STORE_NAME/config/unicorn_init.sh /etc/init.d/unicorn_$STORE_NAME
 
 echo "Updating permissions"
-chmod -R 775 $STORE_PATH$STORE_NAME
+chmod -R 775 $STORE_PATH/$STORE_NAME
 
 echo "Generate Binstubs"
-cd  $STORE_PATH$STORE_NAME
+cd  $STORE_PATH/$STORE_NAME
 
 bundle install --binstubs
 

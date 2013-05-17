@@ -13,17 +13,19 @@ Included in these files is a script that modifies three other template files so 
 
 4. Run the install script
 
-Linux 
+Standard Linux 
 
      $ sh assign_storename.sh
      
- Mac OS X
+Deployments using Capistrano with shared symlink folders
 
-     $ sh assign_storename_mac.sh
+     $ sh assign_storename_shared.sh
 
 Follow the prompts
 
-     Your Store folder name (i.e.: mystore) :mystore
+     Your Store folder name (i.e.: mystore) :mystore => standard linux
+                                             current => capistrano deployments
+
      The path to your store (i.e. : /var/www/) : /Users/ctsimpson/apps/
      Domain names you want this store to respond to:www.mystore.com mystore.com
 
