@@ -32,3 +32,13 @@ find . -name "restart_server.sh" -exec sed -i "s/\[storepath\]/$NEW_PATH/g" '{}'
 echo "Creating Symbolic links"
 rm -rf /etc/nginx/sites-enabled/default
 ln -nfs $STORE_PATH/shared/config/nginx.conf /etc/nginx/sites-enabled/$STORE_NAME
+
+echo "Updating permissions"
+chmod -R 775 $STORE_PATH/$STORE_NAME
+
+echo "Generate Binstubs"
+cd  $STORE_PATH/$STORE_NAME
+
+bundle install --binstubs
+
+echo "Completed"
